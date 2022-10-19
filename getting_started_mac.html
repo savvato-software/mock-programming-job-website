@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Getting started (mac)</title>
+        <link href="./styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="text-getting-started">
+            <div><a href="./index.html">Back to main</a></div>  
+        </div>
+        <div class="text">
+            How to run tribe-app locally on your computer (mac)
+        </div>
+        <div class="text-getting-started">
+            <div>Prerequisites:</div> 
+            <div>
+                <ol>
+                    <li>This documentation assumes you are on a mac computer and running the latest OS</li>
+                    <li>Install the following on your computer locally:</li>
+                    <ol>
+                        <li>MySQL server</li>
+                        <li>NodeJS along with npm</li>
+                        <li>Java 19</li>
+                        <li>Maven</li>
+                    </ol>
+                </ol>
+            </div> 
+            <div>Go to github:</div>
+                <ol>
+                    <li>Fork the following and clone them to your computer locally:</li>
+                    <ol>
+                        <li><a href="https://github.com/savvato-software/tribe-app-backend">backend</a></li>
+                        <li><a href="https://github.com/savvato-software/tribe-app-frontend">frontend</a></li>
+                        <li><a href="https://github.com/savvato-software/savvato-javascript-services">javascript-services</a></li>
+                    </ol>
+                </ol>
+            <div>On your local computer:</div>
+                <ol>
+                    <li>From your command line, type:</li>
+                    <ol>
+                        <li>
+                            <div>mysql.server start</div>
+                            <div>You should get the following response from the terminal:</div>
+                            <div>Starting MySQL</div>
+                            <div>.... SUCCESS!</div>
+                        </li>
+                        <li>
+                            <div>sudo mysql -u root</div>
+                            <div>You should get the following response from the terminal:</div>
+                            <div>Welcome to the MySQL monitor. Commands end with ; or \g.</div>
+                            <div>Your MySQL connection id is 8</div>
+                            <div>Server version: 8.0.30 Homebrew</div>
+                            <div>Copyright (c) 2000, 2022, Oracle and/or its affiliates.</div>
+                            <p>Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.</p>
+                            <div>Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</div>
+                            <div>mysql></div>
+                        </li>
+                        <li>
+                            <div>show databases</div>
+                            <div>You should get the following response from the terminal:</div>
+                            <div>+--------------------+</div>
+                            <div>| Database |</div>
+                            <div>+--------------------+</div>
+                            <div>| information_schema |</div>
+                            <div>| mysql |</div>
+                            <div>| performance_schema |</div>
+                            <div>| sys |</div>
+                            <div>+--------------------+</div>
+                            <div>4 rows in set (0.04 sec)</div>
+                            <p>If you see tribeapp_db listed above, it is okay, it just means tribeapp has been previously set up, and you will need to drop the existing database. [Then show the command]</p>
+                            <div>DROP DATABASE tribeapp_db</div>
+                        </li>
+                        <li>CREATE DATABASE tribeapp_db;</li>
+                        <li>CREATE USER 'tribeapp_db_user'@'localhost' IDENTIFIED BY 'supersecure';</li>
+                        <li>GRANT ALL PRIVILEGES on tribeapp_db.* TO 'tribeapp_db_user'@'localhost';</li>
+                    </ol>
+                    <li>
+                        <div>Open a new terminal window and navigate to the tribe-app-backend folder</div>
+                        <div>Type:</div>
+                        <div>mvn spring-boot:run</div>
+                    </li>
+                    <li>
+                        <div>Open a new terminal window and navigate to the tribe-app-frontend folder</div>
+                        <div>Type:</div>
+                        <div>ionic serve</div>
+                    </li>
+                    <li>
+                        <div>Make sure you shut down your MySQL server on your local machine:</div>
+                        <div>mysql.server stop</div>
+                    </li>
+                </ol>
+
+        </div>
+
+    </body>
+</html>
