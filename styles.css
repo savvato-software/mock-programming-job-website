@@ -1,0 +1,29 @@
+.savvatologo {
+    display: block;
+      margin-left: auto;
+        margin-right: auto;
+          width: 25%;
+          height: 25%;
+}
+
+.logo { 
+    display: block;
+      margin-left: auto;
+        margin-right: auto;
+          width: 50%;
+}
+.text { color: tan; 
+  font-family: "sans";
+  margin-left: 3em;
+  margin-right: 5em;
+  text-align: center;
+}
+
+.text-getting-started {
+    color: tan; 
+    font-family: "sans";
+    margin-left: 3em;
+    margin-right: 5em;
+    text-align: left; 
+}
+
